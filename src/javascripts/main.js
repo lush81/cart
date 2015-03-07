@@ -1,12 +1,13 @@
 require("!style!css!less!../stylesheets/main.less");
+var React = require('react');
 
 var $ = require("jquery");
 var _ = require("underscore");
 
 require("./lib/Stuff.js");
+var AppComponent = require('./components/AppComponent');
 
-var PRODUCTS = [
-  {
+var PRODUCTS =[ {
     code: 'xbox',
     title: 'Xbox One',
     description: 'Be first to experience Xbox One. The Day One Edition features a commemorative controller and an exclusive achievement.',
@@ -32,6 +33,8 @@ var PRODUCTS = [
 var CartStore = Stuff('shopping_cart');
 CartStore.on('change', renderApp);
 
+
+
 function renderApp() {
   var cart = CartStore.map(function (id) {
     var product = CartStore.get(id);
@@ -39,16 +42,18 @@ function renderApp() {
     return product;
   });
 
-  $('#app').html(AppComponent({
+  React.render(<AppComponent cart = {cart} products = {PRODUCTS} /> , document.getElementById('app'));
+  
+/*  $('#app').html(AppComponent({
     products: PRODUCTS,
     cart: cart
-  }));
+  }));*/
 }
 
 
 /* App Components */
 
-function AppComponent(state) {
+/*function AppComponent(state) {
   var html = [
     '<div class="shop">',
       '<% print(ShopComponent(products)) %>',
@@ -64,9 +69,9 @@ function AppComponent(state) {
 
   return _.template(html)(state);
 }
+*/
 
-
-function ShopComponent(products) {
+/*function ShopComponent(products) {
   var html = [
     '<h1>Shop</h1>',
 
@@ -82,9 +87,9 @@ function ShopComponent(products) {
     ProductComponent: ProductComponent
   });
 }
+*/
 
-
-function ProductComponent(product) {
+/*function ProductComponent(product) {
   var html = [
     '<a href="#" class="col-md-4 add-to-cart" data-product="<%= code %>">',
       '<img src="<%= img %>" alt="<%= title %>">',
@@ -93,9 +98,9 @@ function ProductComponent(product) {
 
   return _.template(html)(product);
 }
+*/
 
-
-function CartComponent(cart) {
+/*function CartComponent(cart) {
   var html = [
     '<h1>Your order</h1>',
 
@@ -120,9 +125,9 @@ function CartComponent(cart) {
     CartProductComponent: CartProductComponent
   });
 }
+*/
 
-
-function CartProductComponent(product) {
+/*function CartProductComponent(product) {
   var html = [
     '<div class="row product">',
       '<img class="col-md-3" src="<%= product.img %>" alt="<%= product.title %>">',
@@ -145,7 +150,7 @@ function CartProductComponent(product) {
     product: product
   });
 }
-
+*/
 
 $(function() {
   renderApp();
