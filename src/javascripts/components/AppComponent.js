@@ -1,20 +1,23 @@
 var ShopComponent = require('./ShopComponent');
 var CartComponent = require('./CartComponent');
+var _ = require("underscore");
 
 var React = require('react');
 
 var AppComponent = React.createClass({
   render: function() {
     return ( 
-      
-      <div className = 'shop'> 
-      {this.props.products}
-         {this.props.cart}
-      Hello 
-      </div> 
+      <div className = 'app'>
+         <div className = 'shop'>
+              <ShopComponent products = {this.props.products}/>
+         < / div> 
+         <div className = 'cart'>
+             <CartComponent cart = {this.props.cart}/>
+         < / div> 
+    < / div>   
     );
   }                          
-})
+});
 
 /*function AppComponent(state) {
   var html = [

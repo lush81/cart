@@ -1,6 +1,26 @@
 var ProductComponent = require('./ProductComponent');
+var _ = require("underscore");
 
-function ShopComponent(products) {
+var React = require('react');
+
+var ShopComponent = React.createClass({
+  render: function() {
+    var productList = this.props.products.map(function(product, index){
+       return (<ProductComponent product={product} key={index} />)
+    });
+    return (
+      <div className="shopComp">
+        <h1>Shop</h1>
+        <div className="row">
+          {productList}
+        </div>
+      </div>
+      )
+  }
+})
+
+
+/*function ShopComponent(products) {
   var html = [
     '<h1>Shop</h1>',
 
@@ -15,5 +35,5 @@ function ShopComponent(products) {
     products: products,
     ProductComponent: ProductComponent
   });
-}
+}*/
 module.exports = ShopComponent;

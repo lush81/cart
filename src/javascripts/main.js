@@ -36,13 +36,14 @@ CartStore.on('change', renderApp);
 
 
 function renderApp() {
-  var cart = CartStore.map(function (id) {
+  var cart = CartStore.map(function (id) {    var product = CartStore.get(id);
+
     var product = CartStore.get(id);
     product.id = id;
     return product;
   });
 
-  React.render(<AppComponent cart = {cart} products = {PRODUCTS} /> , document.getElementById('app'));
+  React.render(<AppComponent cart={cart} products = {PRODUCTS}/>, document.getElementById('app'));
   
 /*  $('#app').html(AppComponent({
     products: PRODUCTS,
