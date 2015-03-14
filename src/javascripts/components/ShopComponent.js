@@ -1,15 +1,15 @@
-var ProductComponent = require('./ProductComponent');
+var React = require("react");
 var _ = require("underscore");
 
-var React = require('react');
+var ProductComponent = require('../components/ProductComponent');
 
 var ShopComponent = React.createClass({
   render: function() {
     var productList = this.props.products.map(function(product, index){
-       return (<ProductComponent product={product} key={index} />)
-    });
+       return (<ProductComponent product={product} key={index} addToCart = {this.props.addToCart} />)
+    }.bind(this));
     return (
-      <div className="shopComp">
+      <div className="shopWrapper">
         <h1>Shop</h1>
         <div className="row">
           {productList}

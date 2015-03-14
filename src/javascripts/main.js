@@ -36,14 +36,14 @@ CartStore.on('change', renderApp);
 
 
 function renderApp() {
-  var cart = CartStore.map(function (id) {    var product = CartStore.get(id);
+ /* var cart = CartStore.map(function (id) {    var product = CartStore.get(id);
 
     var product = CartStore.get(id);
     product.id = id;
     return product;
-  });
+  });*/
 
-  React.render(<AppComponent cart={cart} products = {PRODUCTS}/>, document.getElementById('app'));
+  React.render(<AppComponent  products = {PRODUCTS}/>, document.getElementById('app'));
   
 /*  $('#app').html(AppComponent({
     products: PRODUCTS,
@@ -158,16 +158,16 @@ $(function() {
 
   /* Shop handlers */
 
-  $('#app').on('click', '.add-to-cart', function(e) {
-    e.preventDefault();
+ /* $('#app').on('click', '.add-to-cart', function(e) {
+   
+
+    var cartProduc e.preventDefault();
 
     var cartProduct;
     var code = $(e.currentTarget).data('product');
     var product = PRODUCTS.filter(function(product) {
       return product.code === code;
-    })[0];
-
-    var cartProductId = CartStore.find(function(id) {
+    })[0];tId = CartStore.find(function(id) {
       return CartStore.get(id).code === code;
     });
 
@@ -181,7 +181,7 @@ $(function() {
       CartStore.add(product);
     }
   });
-
+*/
 
   /* Cart handlers */
 
