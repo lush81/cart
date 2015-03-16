@@ -6,8 +6,15 @@ var React = require('react');
 var CartComponent = React.createClass({
   render: function() {
     var cartList = this.props.cart.map(function(product, index){
-       return (<CartProductComponent product={product} key={index} />)
-    });
+      // return (<CartProductComponent product={product} key={index} />)
+     return( <CartProductComponent
+          changeQuantity={this.props.changeQuantity}
+          removeFromCart={this.props.removeFromCart}
+          product={product}
+          key={index} /> );
+      
+    }.bind(this));
+    
     var total = this.props.cart.reduce(function(total, p) {
       return total += p.price * p.quantity;
     }, 0);

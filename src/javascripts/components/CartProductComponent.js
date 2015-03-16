@@ -3,6 +3,16 @@ var _ = require("underscore");
 var React = require('react');
 
 var CartProductComponent = React.createClass({
+   removeFromCart: function (event) {
+    event.preventDefault();
+    this.props.removeFromCart(this.props.product.id);
+  },
+
+  changeQuantity: function(event) {
+    var value = parseInt(event.target.value);
+    this.props.changeQuantity(this.props.product.id, value);
+  },
+  
   render: function(){
     return (
         <div className="cartProductComp">
@@ -17,16 +27,18 @@ var CartProductComponent = React.createClass({
 
             <div className="price col-md-2">${this.props.product.price}</div>
             <div className="col-md-1">
-              <input data-product={this.props.product.id} type="number" min="1" className="form-control" value={this.props.product.quantity} />
+              <input onChange={this.changeQuantity} type="number" min="1" className="form-control" value={this.props.product.quantity} />
+      <!--data-product={this.props.product.id} -->
             </div>
-            <a data-product={this.props.product.id} href="#" className="delete fui-cross"></a>
+            <a onClick={this.removeFromCart} href="#" className="delete fui-cross"></a>
+      <!--data-product={this.props.product.id} -->
           </div>
         </div>
       )
   }
-})
+});
 
-function CartProductComponent(product) {
+/*function CartProductComponent(product) {
   var html = [
     '<div class="row product">',
       '<img class="col-md-3" src="<%= product.img %>" alt="<%= product.title %>">',
@@ -48,5 +60,5 @@ function CartProductComponent(product) {
   return _.template(html)({
     product: product
   });
-}
+}*/
 module.exports = CartProductComponent;
