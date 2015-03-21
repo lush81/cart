@@ -1,11 +1,14 @@
 var React = require('react');
 var _ = require("underscore");
 var ProductComponent = require('../components/ProductComponent');
+var cartActions = require('../action/CartActions');
 
 var ProductComponent = React.createClass({
   addToCart: function(event) {
     event.preventDefault();
-    this.props.addToCart(this.props.product.code);
+   //this.props.addToCart(this.props.product.code);
+    cartActions.cartAdd(this.props.product.code);
+    //console.log(this.props.product);
   },
   render: function() {
     return (

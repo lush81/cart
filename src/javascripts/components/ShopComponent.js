@@ -6,7 +6,7 @@ var ProductComponent = require('../components/ProductComponent');
 var ShopComponent = React.createClass({
   render: function() {
     var productList = this.props.products.map(function(product, index){
-       return (<ProductComponent product={product} key={index} addToCart = {this.props.addToCart} />);
+       return (<ProductComponent product={product} key={index} />);
     }.bind(this));
     return (
       <div className="shopWrapper">

@@ -1,16 +1,19 @@
 var _ = require("underscore");
 
 var React = require('react');
+var cartActions = require('../action/CartActions');
 
 var CartProductComponent = React.createClass({
    removeFromCart: function (event) {
     event.preventDefault();
-    this.props.removeFromCart(this.props.product.id);
+    //this.props.removeFromCart(this.props.product.id);
+     cartActions.cartRemove(this.props.product.code);
   },
 
   changeQuantity: function(event) {
     var value = parseInt(event.target.value);
-    this.props.changeQuantity(this.props.product.id, value);
+    //this.props.changeQuantity(this.props.product.id, value);
+    cartActions.cartChangeQuantity(this.props.product.code, value);
   },
   
   render: function(){
@@ -28,10 +31,10 @@ var CartProductComponent = React.createClass({
             <div className="price col-md-2">${this.props.product.price}</div>
             <div className="col-md-1">
               <input onChange={this.changeQuantity} type="number" min="1" className="form-control" value={this.props.product.quantity} />
-      <!--data-product={this.props.product.id} -->
+   
             </div>
             <a onClick={this.removeFromCart} href="#" className="delete fui-cross"></a>
-      <!--data-product={this.props.product.id} -->
+   
           </div>
         </div>
       )

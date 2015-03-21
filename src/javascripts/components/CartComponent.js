@@ -8,12 +8,14 @@ var CartComponent = React.createClass({
     var cartList = this.props.cart.map(function(product, index){
       // return (<CartProductComponent product={product} key={index} />)
      return( <CartProductComponent
-          changeQuantity={this.props.changeQuantity}
-          removeFromCart={this.props.removeFromCart}
+         // changeQuantity={this.props.changeQuantity}
+         // removeFromCart={this.props.removeFromCart}
           product={product}
-          key={index} /> );
+          key={index}/>
+           );
       
-    }.bind(this));
+    }
+ );
     
     var total = this.props.cart.reduce(function(total, p) {
       return total += p.price * p.quantity;
