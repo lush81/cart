@@ -30,6 +30,7 @@
     "babel-loader": "^4.1.0",
     "node-static": "^0.7.6",
     "keymirror": "^0.1.1",
-    "flux": "^2.0.1"
+    "flux": "^2.0.1",
+    "reflux": "^0.2.7"
   }
 }

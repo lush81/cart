@@ -1,5 +1,6 @@
 var React = require('react');
-var _ = require("underscore");
+var Reflux = require('reflux');
+//var _ = require("underscore");
 var ShopComponent = require('./ShopComponent');
 var CartComponent = require('./CartComponent');
 //require("../lib/Stuff.js");
@@ -7,13 +8,15 @@ var CartComponent = require('./CartComponent');
 var CartStore =  require('../stores/CartStore');
 
 var AppComponent = React.createClass({
+   mixins: [Reflux.connect(CartStore, 'cart')],
+  
   getInitialState: function() {
     return { cart: []}
   },
   
  
   
-  componentWillMount() {
+ /* componentWillMount() {
     CartStore.addChangeListener(this.updateState);
   },
 
@@ -24,7 +27,7 @@ var AppComponent = React.createClass({
   updateState() {
     this.setState({ cart: CartStore.getProducts() });
   },
-  
+  */
   render: function() {
     return (
       <div className="app">

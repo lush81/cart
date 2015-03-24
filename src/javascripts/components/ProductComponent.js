@@ -12,7 +12,7 @@ var ProductComponent = React.createClass({
   },
   render: function() {
     return (
-      <div className="productWrapper">
+      <div className="productComp">
         <a href="#" className="col-md-4 add-to-cart" onClick={this.addToCart}>
          <img src={this.props.product.img} alt={this.props.product.title} />
         </a>

@@ -47,9 +47,9 @@ module.exports = {
   },
 
 
-  changeQuantity(id, quantity) {
-    var productId = CartStuff.find(function(id){
-      return CartStuff.get(id).id === id;
+  changeQuantity(code, quantity) {
+    var productId = CartStuff.filter(function(id){
+      return CartStuff.get(id).code === code;
     });
 
     var product = CartStuff.get(productId);

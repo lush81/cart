@@ -1,4 +1,19 @@
-var appDispatcher = require('../dispatcher/CartDispatcher');
+
+var Reflux = require('reflux');
+
+module.exports = Reflux.createActions([
+ // "receiveCartData",
+ // "addToCart",
+  //"removeFromCart",
+  // "changeQuantity",
+  "receiveCartData",
+  "cartAdd",
+  "cartChangeQuantity",
+  "cartRemove"
+  
+]);
+
+/*var appDispatcher = require('../dispatcher/CartDispatcher');
 var constants = require('../constants/CartConstants');
 var Backend = require('../utils/backendSync');
 
@@ -35,3 +50,4 @@ var Actions = {
   }
   
 module.exports = Actions;
+*/
