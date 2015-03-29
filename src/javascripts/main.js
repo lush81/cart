@@ -1,13 +1,12 @@
-require("!style!css!less!../stylesheets/main.less");
 var React = require('react');
 
 var AppComponent = require('./components/AppComponent');
-var products = require('./components/Products');
-var Backend = require('./utils/backendSync');
+var articles = require('./components/Articles');
+//var Backend = require('./utils/backendSync');
 window.React = React;
 
 React.render(
-  <AppComponent  products = {products}/>,
+  <AppComponent  articles = {articles}/>,
   document.getElementById('app'));
 
-Backend.fetch();
+//Backend.fetch();

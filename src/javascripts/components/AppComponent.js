@@ -1,60 +1,31 @@
 var React = require('react');
 var Reflux = require('reflux');
-//var _ = require("underscore");
-var ShopComponent = require('./ShopComponent');
-var CartComponent = require('./CartComponent');
-//require("../lib/Stuff.js");
-//var CartStore = Stuff('shopping_cart');
-var CartStore =  require('../stores/CartStore');
+
+var ToolsBarComponent = require('./ToolsBarComponent');
+var FooterBarComponent = require('./FooterBarComponent');
+var ContentArticlesComponent = require('./ContentArticlesComponent');
+var articles = require('./Articles');
+
+//var CartStore =  require('../stores/CartStore');/////
 
 var AppComponent = React.createClass({
-   mixins: [Reflux.connect(CartStore, 'cart')],
+  // mixins: [Reflux.connect(CartStore, 'articles')],/////
   
   getInitialState: function() {
-    return { cart: []}
+    return { articles: []}
   },
   
- 
-  
- /* componentWillMount() {
-    CartStore.addChangeListener(this.updateState);
-  },
-
-  componentWillUnmount() {
-    CartStore.removeChangeListener(this.updateState);
-  },
-
-  updateState() {
-    this.setState({ cart: CartStore.getProducts() });
-  },
-  */
-  render: function() {
+   render: function() {
     return (
       <div className="app">
        
-       <ShopComponent products={this.props.products} />
-        <CartComponent cart={this.state.cart} />
-      
+       <ToolsBarComponent  />
+        <ContentArticlesComponent articles={this.state.articles} />
+      <FooterBarComponent  />
       </div>
     );
   }
 })
 
-/*function AppComponent(state) {
-  var html = [
-    '<div class="shop">',
-      '<% print(ShopComponent(products)) %>',
-    '</div>',
-
-    '<div class="cart">',
-      '<% print(CartComponent(cart)) %>',
-    '</div>',
-  ].join("\n");
-
-  state.ShopComponent = ShopComponent;
-  state.CartComponent = CartComponent;
-
-  return _.template(html)(state);
-}*/
 
 module.exports = AppComponent;
