@@ -8,24 +8,24 @@ var ToolsBarComponent = React.createClass({
       return (
      
       <div className = "ToolBarComp">
-      <div id = "headerMain">
+      <div className = "headerMain">
                 
-                <div id = "readNow">
+                <div className = "readNow">
                     <h3><a href = "#" onClick = "">Read Now</a></h3>
                 </div>
-                <div id = "search">
+                <div className = "search">
                     <!--<form>-->
-                    <input id = "inputUrl" type = "text" placeholder = "http://..." />
+                    <input className = "inputUrl" type = "text" placeholder = "http://..." />
                     <button  type = "submit" onClick = "buttonAddUrl();">+ ADD URL</button>
                     <!--</form>-->
                 </div>
 
 
-                <div id = "centerHeader">
-                    <h3><a id = "showAll" href = "#" onClick = "showAll()">Show All</a></h3>
+                <div className = "centerHeader">
+                    <h3><a className = "showAll" href = "#" onClick = "showAll()">Show All</a></h3>
                 </div>
-                <div id = "leftHeader">
-                    <input id = "inputSearch" type = "search" placeholder = "Search" onClick = "search()" />
+                <div className= "leftHeader">
+                    <input className = "inputSearch" type = "search" placeholder = "Search" onClick = "search()" />
                 </div>
                 
             </div>

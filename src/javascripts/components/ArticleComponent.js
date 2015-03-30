@@ -1,19 +1,26 @@
 var React = require('react');
-
+var shortBody;
 var ArticleComponent = React.createClass({
+   
+  shortContent(){
+    shortBody = this.props.article.content.substr(0,300)+"...";
+    return shortBody;
+  },
+  
   render: function() {
+      
 return (
 <div className = "contentComp">
-   <div id = "contentMain">
-      <div id = "content">
-         <div class ="article">
+   <div className = "contentMain">
+      <div className = "content">
+         <div className ="article">
            <div >
-               <a class = "titleArticle" href = "#" onClick = {this.a}>
+               <a className = "titleArticle" href = "#" onClick = {this.a}>
                   <h1><b>{this.props.article.title}</b></h1>
                </a>
             </div>
-            <div class = "bodyArticle">{this.props.article.content} ...</div>
-            <div class = "urlArticle"><a href="#"  onClick = {this.b}>{this.props.article.url}</a></div>
+            <div className = "bodyArticle">{this.shortContent()} ...</div>
+            <div className = "urlArticle"><a href="#"  onClick = {this.b}>{this.props.article.url}</a></div>
          </div>
       </div>
    </div>

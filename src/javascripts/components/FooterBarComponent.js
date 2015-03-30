@@ -7,7 +7,7 @@ var FooterBarComponent = React.createClass({
   render: function() {
       return (
 <div className = "footerComp">
-<div id = "footer">
+<div className = "footer">
                 <span>Bookmarklet</span>
                 <a href = "#" onClick = "readLater('flash')">+ Read later</a>
             </div>

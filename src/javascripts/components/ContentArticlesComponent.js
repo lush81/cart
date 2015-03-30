@@ -16,8 +16,7 @@ var ContentArticlesComponent = React.createClass({
 )
     return (
     <div className = "contentArticleaComp">
-      <h1>11</h1>
-      {articlesList}
+       {articlesList}
       </div>
     )
    }                                                    
