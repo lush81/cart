@@ -11,16 +11,16 @@ var articles = require('./Articles');
 var AppComponent = React.createClass({
   // mixins: [Reflux.connect(CartStore, 'articles')],/////
   
-  getInitialState: function() {
-    return { articles: []}
-  },
+  //getInitialState: function() {
+  //  return { articles: []}
+//  },
   
    render: function() {
     return (
       <div className="app">
        
        <ToolsBarComponent  />
-        <ContentArticlesComponent articles={this.state.articles} />
+        <ContentArticlesComponent articles={this.props.articles} />
       <FooterBarComponent  />
       </div>
     );
