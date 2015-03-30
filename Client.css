@@ -18,6 +18,10 @@ a: visited {
     /*text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
     color: blue; /* Ссылка голубого цвета */
 }
+b{
+  color: black;
+}
+
 h3{
     padding-top:8px;
     padding-right:8px;
