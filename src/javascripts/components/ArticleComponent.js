@@ -1,5 +1,6 @@
 var React = require('react');
 var shortBody;
+
 var ArticleComponent = React.createClass({
    
   shortContent(){
@@ -19,7 +20,7 @@ return (
                   <h1><b>{this.props.article.title}</b></h1>
                </a>
             </div>
-            <div className = "bodyArticle">{this.shortContent()} ...</div>
+            <div className = "bodyArticle">{this.shortContent()}</div>
             <div className = "urlArticle"><a href="#"  onClick = {this.b}>{this.props.article.url}</a></div>
          </div>
       </div>

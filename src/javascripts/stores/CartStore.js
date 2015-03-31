@@ -22,13 +22,11 @@ var PRODUCTS = require('../components/Products');
 
 /*function _cartAdd1(code) {
   var cartProduct;
-
   var product = PRODUCTS.filter(function (product) {
     return product.code === code;
   })[0];
   
   //var productIsInCart = _cart.some(function(p) { return p.id == product.id ;});
-
   if(CartStore.isInCart(product)) {
     cartProduct = CartStore.getProduct(code);
     cartProduct.quantity++;
@@ -134,23 +132,18 @@ var CartStore = Reflux.createStore({
   isInCart(product) {
    return _cart.some(function(p) { return p.code == product.code });
   },
-
   getProducts() {
     return _cart;
   },
-
   getProduct(code) {
     return _cart.filter(function(p) { return p.code == code ;})[0];
   },
-
   emitChange() {
     this.emit(CHANGE_EVENT);
   },
-
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-
   removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
@@ -158,33 +151,26 @@ var CartStore = Reflux.createStore({
 */
 /*AppDispatcher.register(function(action) {
   //var action = payload.action;
-
   switch(action.actionType) {
     case CartConstants.RECEIVE_CART_DATA:
       _receiveCartData(action.data);
       break;
-
    case CartConstants.CART_ADD:
    // case '1':
       _cartAdd1(action.code);
       console.log(action.code)
       break;
-
       //case 1
     case CartConstants.CART_REMOVE:
       _cartRemove(action.code);
       break;
-
     case CartConstants.CART_CHANGE_QUANTITY:
       _changeQuantity(action.code, action.quantity);
       break;
-
     default:
       return true;
   }
-
   CartStore.emitChange();
-
   return true;
 });
 */
