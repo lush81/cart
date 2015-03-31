@@ -1,26 +1,26 @@
 var React = require('react');
 var Reflux = require('reflux');
 
-var ToolsBarComponent = require('./ToolsBarComponent');
+var ToolsBarComponent = require('./header/ToolsBarComponent');
 var FooterBarComponent = require('./FooterBarComponent');
 var ContentArticlesComponent = require('./ContentArticlesComponent');
 var articles = require('./Articles');
 
-//var CartStore =  require('../stores/CartStore');/////
+var ArticleStore =  require('../stores/ArticleStore');/////
 
 var AppComponent = React.createClass({
-  // mixins: [Reflux.connect(CartStore, 'articles')],/////
+   mixins: [Reflux.connect(ArticleStore, 'articles')],/////
   
-  //getInitialState: function() {
-  //  return { articles: []}
-//  },
+  getInitialState: function() {
+    return { articles: []}
+  },
   
    render: function() {
     return (
       <div className="app">
        
        <ToolsBarComponent  />
-        <ContentArticlesComponent articles={this.props.articles} />
+      <ContentArticlesComponent articles={this.state.articles} />
       <FooterBarComponent  />
       </div>
     );

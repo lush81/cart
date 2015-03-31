@@ -1,4 +1,4 @@
-require('../lib/Stuff');
+/*require('../lib/Stuff');
 
 var extend = require('underscore').extend;
 var PRODUCTS = require('../components/Products');
@@ -57,4 +57,4 @@ module.exports = {
     product.quantity = quantity;
     CartStuff.update(productId, product);
   },
-}
+}*/

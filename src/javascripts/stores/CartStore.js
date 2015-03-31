@@ -7,9 +7,9 @@ var extend = require('underscore').extend;
 //var AppDispatcher = require('../dispatcher/CartDispatcher');
 //var CartConstants = require('../constants/CartConstants');
 var CartActions = require('../action/CartActions');
-var backend = require('../utils/backendSync');
+//var backend = require('../utils/backendSync');
 
-var PRODUCTS = require('../components/Products');
+//var PRODUCTS = require('../components/Products');
 //var CHANGE_EVENT = 'change';
 
 //var _cart = [];
@@ -188,4 +188,4 @@ var CartStore = Reflux.createStore({
   return true;
 });
 */
-module.exports = CartStore;
+//module.exports = CartStore;
