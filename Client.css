@@ -66,7 +66,8 @@ h3:hover{
 }
 
 .footer{
-  display:inline-block;;
+  display:inline-block;
+   clear:both;
 }
 
 .titleArticle{
