@@ -25,8 +25,10 @@ module.exports = {
      /*var articleId = CartStuff.find(function(id){
       return CartStuff.get(id).url === url;
     });*/
-    //var cartProduct;
-     //cartProduct = CartStuff.get(url);
-    CartStuff.add(extend({}, Art,{url:'111'}));     
+    var contArt;
+     contArt = CartStuff.get(url);
+    //CartStuff.add(extend({}, Art,{url:'111'}));  
+    console.log("1 "+Art[0].url )
+ CartStuff.add(extend({}, contArt,{title:Art[0].title, content: Art[0].content, url: Art[0].url}));   
     }
   }

@@ -30,9 +30,11 @@ var ArticleStore = Reflux.createStore({
     console.log("s " +url)
     
 var contArt;
-     //contArt = this.getArticle(url);
+     contArt = this.getArticle(url);
     
-      contArt = extend({}, Art, {url:'111'});
+   // contArt = extend({}, Art, {url:'111'});  
+    
+    contArt = extend({}, Art,{title:Art[0].title, content: Art[0].content, url: Art[0].url});
     console.log(contArt)
       this._article.push(contArt);
     console.log(this._article)
